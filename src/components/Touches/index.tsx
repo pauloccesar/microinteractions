@@ -1,6 +1,6 @@
 import { View, Pressable } from "react-native";
 import { GestureDetector, Gesture } from "react-native-gesture-handler";
-import Animated, { useSharedValue, useAnimatedStyle, withSpring, withTiming } from "react-native-reanimated";
+import Animated, { useSharedValue, useAnimatedStyle, withSpring, withTiming, interpolateColor } from "react-native-reanimated";
 
 import { styles } from "./styles";
 
@@ -20,12 +20,13 @@ export function Touches() {
     .Tap()
     .numberOfTaps(2)
     .onStart(() => {
-      doubleTapActive.value = withTiming(doubleTapActive.value === 0 ? 1 : 0, {duration: 500})
+      doubleTapActive.value = withTiming(doubleTapActive.value === 0 ? 1 : 0, { duration: 500 })
     })
 
   const animatedStyle = useAnimatedStyle(() => ({
     width: position.value,
-    height: position.value
+    height: position.value,
+    backgroundColor: interpolateColor(doubleTapActive.value, [0, 1], ['#8527e5', '#bf5a07'])
   }))
 
   return (

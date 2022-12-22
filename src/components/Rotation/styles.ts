@@ -7,6 +7,9 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   box : {
+    width: 200,
+    height: 200,
     borderRadius: 12,
+    backgroundColor: '#8227e5'
   }
 });

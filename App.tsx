@@ -1,10 +1,10 @@
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { Touches } from './src/components/Touches';
+import { Fling } from './src/components/Fling';
 
 export default function App() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
-      <Touches />
+      <Fling />
     </GestureHandlerRootView>
   );
 }
